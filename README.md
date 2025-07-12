@@ -4,13 +4,13 @@ A Spring Boot 3 learning project to explore Caffeine Cache integration and usage
 
 ## 📚 Purpose
 
-This project demonstrates how to integrate and use the [Caffeine](https://github.com/ben-manes/caffeine) caching library with Spring Boot. It focuses on practical examples including in-memory caching, eviction policies, and performance insights.
+This project demonstrates how to integrate and use the [Caffeine](https://github.com/ben-manes/caffeine) caching library with Spring Boot. It focuses on practical examples including in-memory caching, eviction policies, and cache abstraction best practices.
 
 ## 🛠 Tech Stack
 
 - Java 21
 - Spring Boot 3.5.3
-- Caffeine 3.2.1
+- Caffeine 3.x
 - Maven
 
 ## 📦 Dependencies
@@ -18,6 +18,7 @@ This project demonstrates how to integrate and use the [Caffeine](https://github
 Main dependencies included:
 - `spring-boot-starter-web`
 - `spring-boot-starter-cache`
+- `spring-boot-starter-actuator`
 - `com.github.ben-manes.caffeine:caffeine`
 - `lombok` (optional)
 - `spring-boot-starter-test`
@@ -41,21 +42,32 @@ mvn spring-boot:run
 mvn clean install
 ```
 
+## 📂 Package Structure
+
+```
+com.alfie.springbootcaffeinecache
+├── controllers
+│   └── EmployeeController.java
+│   └── VersionApiController.java
+├── models
+│   └── Employee.java
+├── repositories
+│   └── EmployeeRepository.java
+├── services
+│   └── EmployeeService.java
+├── utils
+│   └── CacheHelper.java
+└── config
+    └── CacheConfiguration.java
+```
+
 ## 🔍 What You Will Learn
 
-- Enabling cache in Spring Boot
-- Configuring and customizing Caffeine cache
-- Using annotations like `@Cacheable`, `@CachePut`, and `@CacheEvict`
-- Defining custom cache configurations like TTL and maximum size
-
-## 📁 Structure
-
-```
-src/
- └── main/
-     └── java/
-         └── com.alfie.springbootcaffeinecache/
-```
+- How to enable and configure caching in Spring Boot
+- How to use Caffeine for fast in-memory caching
+- Best practices for using `@Cacheable`, `@CacheEvict`, and `@CachePut`
+- Managing cache keys and types properly to avoid runtime issues
+- Dynamically assigning cache templates based on cache name
 
 ## 📌 Notes
 
